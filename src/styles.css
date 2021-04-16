@@ -6,6 +6,7 @@
 }
 
 body {
+  font-family: "Karla", sans-serif !important;
   background: var(--background) !important;
   color: var(--textdark) !important;
 }
