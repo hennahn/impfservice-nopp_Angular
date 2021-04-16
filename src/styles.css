@@ -1,1 +1,36 @@
-/* Add application styles & imports to this file! */
+:root {
+  --primary: #db3c17;
+  --primarydark: #a32d10;
+  --textdark: #363637;
+  --background: #f4f1eb;
+}
+
+body {
+  background: var(--background) !important;
+  color: var(--textdark) !important;
+}
+
+div.ui.attached.stackable.menu {
+  border: none;
+}
+
+a.item.active {
+  background: white !important;
+  color: var(--primary) !important;
+}
+
+/* ================ BUTTONS ================ */
+
+.button {
+  border-radius: 25px !important;
+  padding: 16px 24px !important;
+}
+
+.primary-btn {
+  background-color: var(--primary) !important;
+  color: white !important;
+}
+
+.primary-btn:hover {
+  background-color: var(--primarydark) !important;
+}

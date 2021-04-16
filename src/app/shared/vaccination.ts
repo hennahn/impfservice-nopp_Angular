@@ -7,6 +7,6 @@ export class Vaccination {
     public from: Date,
     public to: Date,
     public maxParticipants: number,
-    public location: Location
+    public location_id: Location
   ) {}
 }

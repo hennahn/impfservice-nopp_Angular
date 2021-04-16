@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
-  selector: "app-home",
+  selector: "is-home",
   templateUrl: "./home.component.html"
 })
 export class HomeComponent implements OnInit {
