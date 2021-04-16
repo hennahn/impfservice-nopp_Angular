@@ -12,6 +12,10 @@ body {
 }
 
 /* ================ HEADLINES ================ */
+h1,
+h2 {
+  font-family: "Karla", sans-serif !important;
+}
 
 /* ================ MENU ================ */
 
@@ -19,9 +23,14 @@ div.ui.attached.stackable.menu {
   border: none;
 }
 
+a.item {
+  font-family: "Karla", sans-serif !important;
+}
+
 a.item.active {
   background: white !important;
   color: var(--primary) !important;
+  font-weight: 700 !important;
 }
 
 /* ================ BUTTONS ================ */
@@ -29,6 +38,8 @@ a.item.active {
 .button {
   border-radius: 25px !important;
   padding: 16px 24px !important;
+  font-family: "Karla", sans-serif !important;
+  font-weight: 600 !important;
 }
 
 .primary-btn {
