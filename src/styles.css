@@ -11,6 +11,10 @@ body {
   color: var(--textdark) !important;
 }
 
+/* ================ HEADLINES ================ */
+
+/* ================ MENU ================ */
+
 div.ui.attached.stackable.menu {
   border: none;
 }
