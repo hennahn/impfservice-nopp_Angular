@@ -1,4 +1,6 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<div class="ui three item tabs menu">
+  <!-- Links ohne href! ersetzen durch routerLink -->
+  <a routerLink="home" routerLinkActive="active" class="item">Home</a>
+</div>
+<!-- Komponente, die angezeigt werden soll, weil route aufgerufen wurde -->
+<router-outlet></router-outlet>
