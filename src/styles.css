@@ -1,8 +1,12 @@
+/* ================ VARS / GENERAL ================ */
+
 :root {
   --primary: #db3c17;
   --primarydark: #a32d10;
   --textdark: #363637;
   --background: #f4f1eb;
+  --backgrounddark: #e1dccb;
+  --backgrounddarker: #c3b997;
 }
 
 body {
@@ -12,28 +16,14 @@ body {
   color: var(--textdark) !important;
 }
 
-/* ================ CONTAINER ================ */
+/* ================ CONTAINERS / GRID / ROWS ================ */
 
 .topcontainer {
-  margin-top: 80px;
+  padding: 80px 0px;
 }
 
-/* ================ TEXT ================ */
-h1,
-h2 {
-  font-family: "Karla", sans-serif !important;
-}
-
-h1 {
-  font-size: 48px !important;
-}
-
-h2 {
-  font-size: 38px !important;
-}
-
-.red {
-  color: var(--primarydark);
+.row {
+  padding: 40px 0px !important;
 }
 
 /* ================ MENU ================ */
@@ -61,6 +51,24 @@ a.item.active {
   background-color: var(--background) !important;
 }
 
+/* ================ TEXT ================ */
+h1,
+h2 {
+  font-family: "Karla", sans-serif !important;
+}
+
+h1 {
+  font-size: 50px !important;
+}
+
+h2 {
+  font-size: 38px !important;
+}
+
+.red {
+  color: var(--primarydark);
+}
+
 /* ================ BUTTONS ================ */
 
 .button {
@@ -81,4 +89,31 @@ a.item.active {
 
 .tiny {
   padding: 12px 20px !important;
+}
+
+/* ================ CARDS ================ */
+
+.card {
+  width: 100% !important;
+  padding: 20px 10px !important;
+  border: solid 1px !important;
+  border-color: var(--backgrounddarker) !important;
+  box-shadow: none !important;
+}
+
+/* ================ TABLE ================ */
+
+table {
+  border-color: var(--backgrounddarker) !important;
+  box-shadow: none !important;
+}
+
+thead,
+th {
+  background: var(--backgrounddark) !important;
+  border-color: var(--backgrounddarker) !important;
+}
+
+td {
+  border-color: var(--backgrounddark) !important;
 }

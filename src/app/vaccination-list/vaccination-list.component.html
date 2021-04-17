@@ -1,23 +1,80 @@
 <div class="ui container center aligned topcontainer">
-  <h1>Alle Impftermine</h1>
+  <div class="ui stackable middle center aligned three column grid">
+    <div class="one column row">
+      <div class="column">
+        <h1>Alle Impftermine</h1>
+        <p>
+          Hier finden Sie eine Übersicht aller aktueller Impftermine. Finden Sie
+          Ihren perfekten Termin und melden Sie sich direkt für Ihre
+          Schutzimpfung an.
+        </p>
+      </div>
+    </div>
 
-  <table class="ui compact celled table">
-    <thead>
-      <tr>
-        <th>Datum</th>
-        <th>Von</th>
-        <th>Bis</th>
-        <th>Ort</th>
-        <th>Plätze</th>
-        <th>Details</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr
-        *ngFor="let vaccination of vaccinations"
-        class="is-vaccination-list-item"
-        [vaccination]="vaccination"
-      ></tr>
-    </tbody>
-  </table>
+    <div class="one column row">
+      <div class="column">
+        <table class="ui compact celled table">
+          <thead>
+            <tr>
+              <th>Datum</th>
+              <th>Von</th>
+              <th>Bis</th>
+              <th>Ort</th>
+              <th>Plätze</th>
+              <th>Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              *ngFor="let vaccination of vaccinations"
+              class="is-vaccination-list-item"
+              [vaccination]="vaccination"
+            ></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="one column row">
+      <div class="column">
+        <h2>Häufig gestellte Fragen</h2>
+      </div>
+    </div>
+
+    <div class="three column row">
+      <div class="column">
+        <div class="ui card">
+          <div class="content">
+            <h3 class="header">Ist die Impfung kostenlos?</h3>
+            <div class="description">
+              COVID-19-Impfstoff wird für alle Menschen in Österreich kostenfrei
+              zur Verfügung stehen, die sich impfen lassen wollen.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="ui card">
+          <div class="content">
+            <h3 class="header">Ist die Impfung freiwillig?</h3>
+            <div class="description">
+              Ja. Österreich setzt auf Freiwilligkeit und Aufklärung. Alle, die
+              sich impfen lassen möchten, können sich impfen lassen.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="ui card">
+          <div class="content">
+            <h3 class="header">Wie sicher ist die Impfung?</h3>
+            <div class="description">
+              Sehr sicher. Die zugelassenen Corona-Impfstoffe haben alle drei
+              Phasen der klinischen Prüfung erfolgreich bestanden.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
