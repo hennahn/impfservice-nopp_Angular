@@ -70,3 +70,7 @@ a.item.active {
 .primary-btn:hover {
   background-color: var(--primarydark) !important;
 }
+
+.tiny {
+  padding: 12px 20px !important;
+}

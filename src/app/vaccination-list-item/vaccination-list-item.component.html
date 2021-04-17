@@ -1,8 +1,10 @@
-<div class="ui container aligned center">
-  <div class="content">
-    <div class="header">
-      Impfung am {{vaccination.from | date}} von {{vaccination.from |
-      date:'shortTime'}} bis {{vaccination.to | date:'shortTime'}}
-    </div>
-  </div>
-</div>
+<td>{{vaccination?.from | date:'dd.MM.yyyy'}}</td>
+<td>{{vaccination?.from | date:'hh:mm'}}</td>
+<td>{{vaccination?.to | date:'hh:mm'}}</td>
+<td>{{vaccination?.location?.name}}</td>
+<td>{{vaccination?.maxParticipants}}</td>
+<td>
+  <a class="ui button tiny primary-btn" [routerLink]="'../vaccinations/1'"
+    >Jetzt anmelden</a
+  >
+</td>
