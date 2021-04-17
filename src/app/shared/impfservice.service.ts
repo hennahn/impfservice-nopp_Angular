@@ -8,7 +8,7 @@ import { User } from "./user";
 
 @Injectable()
 export class ImpfserviceService {
-  private api = "http://impfservice.s1810456023.student.kwmhgb.at/api";
+  private api = "https://impfservice.s1810456023.student.kwmhgb.at/api";
 
   constructor(private http: HttpClient) {}
 

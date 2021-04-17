@@ -1,5 +1,8 @@
 <div class="ui container aligned center">
   <div class="content">
-    <div class="header">Impfung am {{vaccination.from}}</div>
+    <div class="header">
+      Impfung am {{vaccination.from | date}} von {{vaccination.from |
+      date:'shortTime'}} bis {{vaccination.to | date:'shortTime'}}
+    </div>
   </div>
 </div>

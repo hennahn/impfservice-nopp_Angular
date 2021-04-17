@@ -11,6 +11,12 @@ body {
   color: var(--textdark) !important;
 }
 
+/* ================ CONTAINER ================ */
+
+.topcontainer {
+  margin-top: 80px;
+}
+
 /* ================ HEADLINES ================ */
 h1,
 h2 {
