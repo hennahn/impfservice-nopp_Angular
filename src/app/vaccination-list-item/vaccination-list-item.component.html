@@ -4,7 +4,5 @@
 <td>{{vaccination?.location?.name}}</td>
 <td>{{vaccination?.maxParticipants}}</td>
 <td>
-  <a class="ui button tiny primary-btn" [routerLink]="'../vaccinations/1'"
-    >Jetzt anmelden</a
-  >
+  <a class="ui button tiny primary-btn" [routerLink]="vaccination.id">Jetzt anmelden</a>
 </td>
