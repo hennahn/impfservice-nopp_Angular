@@ -7,6 +7,7 @@
 
 body {
   font-family: "Karla", sans-serif !important;
+  font-size: 17px !important;
   background: var(--background) !important;
   color: var(--textdark) !important;
 }
@@ -23,20 +24,33 @@ h2 {
   font-family: "Karla", sans-serif !important;
 }
 
+h1 {
+  font-size: 40px !important;
+}
+
 /* ================ MENU ================ */
+
+.menu {
+  min-height: 70px !important;
+}
 
 div.ui.attached.stackable.menu {
   border: none;
 }
 
 a.item {
+  font-size: 17px !important;
   font-family: "Karla", sans-serif !important;
 }
 
 a.item.active {
+  font-weight: 700 !important;
   background: white !important;
   color: var(--primary) !important;
-  font-weight: 700 !important;
+}
+
+.ui.menu .item:before {
+  background-color: var(--background) !important;
 }
 
 /* ================ BUTTONS ================ */
