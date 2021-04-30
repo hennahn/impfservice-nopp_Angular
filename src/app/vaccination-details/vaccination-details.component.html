@@ -2,17 +2,20 @@
   <div class="ui stackable middle aligned grid">
     <div class="row">
       <div class="column">
-        <h1>Anmeldung zur Impfung</h1>
+        <h1>Details zum Impftermin</h1>
         <h3>Sie haben folgenden Impftermin ausgewählt:</h3>
-        <p><b>Datum: </b>{{vaccination?.from | date:'dd.MM.yyyy'}}
-          <br>
-          <b>Uhrzeit: </b>{{vaccination?.from | date:'hh:mm'}} - {{vaccination?.to | date:'hh:mm'}}
-          <br>
+        <p>
+          <b>Datum: </b>{{vaccination?.from | date:'dd.MM.yyyy'}}
+          <br />
+          <b>Uhrzeit: </b>{{vaccination?.from | date:'hh:mm'}} -
+          {{vaccination?.to | date:'hh:mm'}}
+          <br />
           <b>Ort: </b>{{vaccination?.location?.name}}
-          <br>
-          <b>Adresse: </b>{{vaccination?.location?.street}} {{vaccination?.location?.houseNo}},
-          {{vaccination?.location?.zipCode}} {{vaccination?.location?.city}}
-          <br>
+          <br />
+          <b>Adresse: </b>{{vaccination?.location?.street}}
+          {{vaccination?.location?.houseNo}}, {{vaccination?.location?.zipCode}}
+          {{vaccination?.location?.city}}
+          <br />
         </p>
       </div>
     </div>
