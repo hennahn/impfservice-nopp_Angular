@@ -10,10 +10,8 @@
       </div>
 
       <div class="column">
-        <h2>Termin bearbeiten / anlegen</h2>
+        <h2>Neuen Termin anlegen oder bearbeiten</h2>
         <form class="ui large form" [formGroup]="vaccinationForm" (ngSubmit)="submitForm()">
-          <!--<h2 *ngIf="isUpdatingVaccination">Impftermin bearbeiten</h2>-->
-          <!--<h2 *ngIf="!isUpdatingVaccination">Neuen Impftermin anlegen</h2>-->
           <input type="hidden" name="id" />
 
           <div class="field">
@@ -28,16 +26,7 @@
             <div *ngIf="errors.to" class="ui negative message">{{ errors.to }}</div>
           </div>
 
-          <!--<div class="field">
-    <label>Ort</label>
-    <select class="custom-select" formControlName="location">
-      <option value="" disabled>Ort auswählen</option>
-      <option *ngFor="let location of locations">{{location.name}}</option>
-    </select>
-    <div *ngIf="errors.location" class="ui negative message">
-      {{ errors.location }}
-    </div>
-  </div>-->
+          <!--TODO: LOCATION -->
 
           <div class="field">
             <label>Max. Teilnehmer*innenanzahl</label>

@@ -13,5 +13,5 @@ export const VaccinationFormErrorMessages = [
     'required',
     'Bitte geben Sie eine maximale Anzahl an Teilnerhmer*innen an.'
   )
-  //new ErrorMessage("location", "required", "Bitte geben Sie einen Impfort an."),
+  //TODO: Location Error Message,
 ];

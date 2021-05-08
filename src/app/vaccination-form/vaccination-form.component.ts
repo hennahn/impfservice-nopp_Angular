@@ -7,9 +7,9 @@ import {
   Validators
 } from '@angular/forms';
 import { VaccinationFactory } from '../shared/vaccination-factory';
-import { ImpfserviceService } from '../shared/impfservice.service';
 import { Vaccination } from '../shared/vaccination';
 import { VaccinationFormErrorMessages } from './vaccination-form-error-messages';
+import { ImpfserviceService } from '../shared/impfservice.service';
 //import { VaccinationsValidators } from "../shared/vaccination-validators";
 //TODO: LocationService
 
@@ -46,7 +46,7 @@ export class VaccinationFormComponent implements OnInit {
 
   initVaccination() {
     //Formular Model bauen
-    this.vaccinationForm = this.is.group({
+    this.vaccinationForm = this.fb.group({
       id: this.vaccination.id,
       from: [this.vaccination.from, [Validators.required]],
       to: [this.vaccination.to, [Validators.required]],
