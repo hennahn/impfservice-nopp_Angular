@@ -1,6 +1,7 @@
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import {
+  FormArray,
   FormBuilder,
   FormControl,
   FormGroup,
@@ -11,7 +12,7 @@ import { Vaccination } from '../shared/vaccination';
 import { VaccinationFormErrorMessages } from './vaccination-form-error-messages';
 import { ImpfserviceService } from '../shared/impfservice.service';
 import { Location } from '../shared/location';
-//import { LocationService } from '../shared/location.service';
+import { LocationService } from '../shared/location.service';
 //import { VaccinationsValidators } from "../shared/vaccination-validators";
 
 @Component({
@@ -23,24 +24,28 @@ export class VaccinationFormComponent implements OnInit {
   vaccination = VaccinationFactory.empty(); //leeren Termin initial anlegen
   errors: { [key: string]: string } = {};
   isUpdatingVaccination = false; //einen bestehenden Termin updaten ja/nein
-  //locations: Location[];
+  locations: Location[];
+  /* ALT
   location = [
     { id: 1, location: 'Sportpark Walding' },
     { id: 2, location: 'Design Center Linz' },
     { id: 3, location: 'Ausbildungszentrum Kepler Universitätsklinikum' }
-  ];
+  ];*/
 
   constructor(
     private fb: FormBuilder,
     private is: ImpfserviceService,
     private route: ActivatedRoute,
-    private router: Router
-  ) //private ls: LocationService
-  {}
+    private router: Router,
+    private ls: LocationService
+  ) {}
 
   ngOnInit() {
     //hat der Termin bereits einen param id oder nicht (ja->existiert schon)
     const id = this.route.snapshot.params['id'];
+    this.ls.getAllLocations().subscribe(locations => {
+      this.locations = locations;
+    });
     if (id) {
       this.isUpdatingVaccination = true; //Termin gibt es schon -> möchte ich updaten
       this.is.getSingleVaccination(id).subscribe(vaccination => {

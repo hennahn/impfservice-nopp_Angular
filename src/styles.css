@@ -7,8 +7,10 @@
   --background: #f4f1eb;
   --backgrounddark: #e1dccb;
   --backgrounddarker: #c3b997;
-  --yellow: #EDA745;
-  --yellowdark: #E99520;
+  --yellow: #eda745;
+  --yellowdark: #e99520;
+  --nearlyblack: #1f2633;
+  --nearlyblackdarker: #08090d;
 }
 
 body {
@@ -71,6 +73,14 @@ h2 {
   color: var(--primarydark);
 }
 
+a {
+  color: var(--nearlyblack) !important;
+}
+
+a:hover {
+  color: var(--primary) !important;
+}
+
 /* ================ BUTTONS ================ */
 
 .button {
@@ -87,6 +97,7 @@ h2 {
 
 .primary-btn:hover {
   background-color: var(--primarydark) !important;
+  color: white !important;
 }
 
 .edit-btn {
@@ -96,6 +107,17 @@ h2 {
 
 .edit-btn:hover {
   background-color: var(--yellowdark) !important;
+  color: white !important;
+}
+
+.remove-btn {
+  background-color: var(--nearlyblack) !important;
+  color: white !important;
+}
+
+.remove-btn:hover {
+  background-color: var(--nearlyblackdarker) !important;
+  color: white !important;
 }
 
 .tiny {

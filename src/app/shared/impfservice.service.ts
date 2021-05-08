@@ -1,14 +1,14 @@
-import { HttpClient } from "@angular/common/http";
-import { Injectable } from "@angular/core";
-import { Observable, throwError } from "rxjs";
-import { catchError, retry } from "rxjs/operators";
-import { Location } from "./location";
-import { Vaccination } from "./vaccination";
-import { User } from "./user";
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable, throwError } from 'rxjs';
+import { catchError, retry } from 'rxjs/operators';
+import { Location } from './location';
+import { Vaccination } from './vaccination';
+import { User } from './user';
 
 @Injectable()
 export class ImpfserviceService {
-  private api = "https://impfservice.s1810456023.student.kwmhgb.at/api";
+  private api = 'https://impfservice.s1810456023.student.kwmhgb.at/api';
 
   constructor(private http: HttpClient) {}
 
@@ -19,14 +19,14 @@ export class ImpfserviceService {
       .pipe(catchError(this.errorHandler));
   }
 
-  getSingleVaccination(id: Number): Observable<Vaccination> {
+  getSingleVaccination(id: string): Observable<Vaccination> {
     return this.http
       .get<Vaccination>(`${this.api}/vaccinations/${id}`)
       .pipe(retry(3))
       .pipe(catchError(this.errorHandler));
   }
 
-  removeVaccination(id: Number): Observable<any> {
+  removeVaccination(id: string): Observable<any> {
     return this.http
       .delete(`${this.api}/vaccinations/${id}`)
       .pipe(retry(3))

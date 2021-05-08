@@ -2,6 +2,9 @@
   <div class="ui stackable middle aligned grid">
     <div class="row">
       <div class="column">
+        <a [routerLink]="'/vaccinations'" class="ui"><i class="arrow left
+ icon"></i> Zurück zur Terminübersicht</a>
+        <br>
         <h1>Details zum Impftermin</h1>
         <h3>Sie haben folgenden Impftermin ausgewählt:</h3>
         <p>
@@ -23,6 +26,7 @@
         <a [routerLink]="['../../admin', vaccination?.id]" class="ui icon button edit-btn">
           <i class="write icon"></i> Termin bearbeiten
         </a>
+        <button class="ui icon button remove-btn" (click)="removeVaccination()"> <i class="remove icon"></i> Termin löschen</button>
       </div>
     </div>
   </div>
