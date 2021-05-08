@@ -7,10 +7,12 @@
   --background: #f4f1eb;
   --backgrounddark: #e1dccb;
   --backgrounddarker: #c3b997;
+  --yellow: #EDA745;
+  --yellowdark: #E99520;
 }
 
 body {
-  font-family: "Karla", sans-serif !important;
+  font-family: 'Karla', sans-serif !important;
   font-size: 17px !important;
   background: var(--background) !important;
   color: var(--textdark) !important;
@@ -38,7 +40,7 @@ div.ui.attached.stackable.menu {
 
 a.item {
   font-size: 17px !important;
-  font-family: "Karla", sans-serif !important;
+  font-family: 'Karla', sans-serif !important;
 }
 
 a.item.active {
@@ -54,7 +56,7 @@ a.item.active {
 /* ================ TEXT ================ */
 h1,
 h2 {
-  font-family: "Karla", sans-serif !important;
+  font-family: 'Karla', sans-serif !important;
 }
 
 h1 {
@@ -74,7 +76,7 @@ h2 {
 .button {
   border-radius: 25px !important;
   padding: 16px 24px !important;
-  font-family: "Karla", sans-serif !important;
+  font-family: 'Karla', sans-serif !important;
   font-weight: 600 !important;
 }
 
@@ -85,6 +87,15 @@ h2 {
 
 .primary-btn:hover {
   background-color: var(--primarydark) !important;
+}
+
+.edit-btn {
+  background-color: var(--yellow) !important;
+  color: white !important;
+}
+
+.edit-btn:hover {
+  background-color: var(--yellowdark) !important;
 }
 
 .tiny {

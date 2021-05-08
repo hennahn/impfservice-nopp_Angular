@@ -17,6 +17,10 @@
           {{vaccination?.location?.city}}
           <br />
         </p>
+        <br>
+        <a [routerLink]="['../../admin', vaccination?.id]" class="ui icon button edit-btn">
+          <i class="write icon"></i> Termin bearbeiten
+        </a>
       </div>
     </div>
   </div>

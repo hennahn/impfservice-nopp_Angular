@@ -9,6 +9,7 @@ import { VaccinationListComponent } from "./vaccination-list/vaccination-list.co
 import { VaccinationListItemComponent } from "./vaccination-list-item/vaccination-list-item.component";
 import { VaccinationDetailsComponent } from "./vaccination-details/vaccination-details.component";
 import { ImpfserviceService } from "./shared/impfservice.service";
+import { VaccinationFormComponent } from './vaccination-form/vaccination-form.component';
 
 @NgModule({
   imports: [
@@ -22,7 +23,8 @@ import { ImpfserviceService } from "./shared/impfservice.service";
     HomeComponent,
     VaccinationListComponent,
     VaccinationListItemComponent,
-    VaccinationDetailsComponent
+    VaccinationDetailsComponent,
+    VaccinationFormComponent
   ],
   bootstrap: [AppComponent],
   providers: [ImpfserviceService]

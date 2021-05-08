@@ -1,0 +1,57 @@
+<div class="ui container center aligned topcontainer">
+  <div class="ui stackable middle center aligned three column grid">
+    <div class="one column row">
+      <div class="column">
+        <h1>Willkommen im Admin Bereich!</h1>
+        <p>
+          Als Administrator*in können Sie hier neue Impftermine anlegen und bestehende Termine bearbeiten oder löschen.
+        </p>
+        <br>
+      </div>
+
+      <div class="column">
+        <h2>Termin bearbeiten / anlegen</h2>
+        <form class="ui large form" [formGroup]="vaccinationForm" (ngSubmit)="submitForm()">
+          <!--<h2 *ngIf="isUpdatingVaccination">Impftermin bearbeiten</h2>-->
+          <!--<h2 *ngIf="!isUpdatingVaccination">Neuen Impftermin anlegen</h2>-->
+          <input type="hidden" name="id" />
+
+          <div class="field">
+            <label>Von (Datum und Uhrzeit)</label>
+            <input type="datetime-local" formControlName="from" />
+            <div *ngIf="errors.from" class="ui negative message">{{ errors.from }}</div>
+          </div>
+
+          <div class="field">
+            <label>Bis (Datum und Uhrzeit)</label>
+            <input type="datetime-local" formControlName="to" />
+            <div *ngIf="errors.to" class="ui negative message">{{ errors.to }}</div>
+          </div>
+
+          <!--<div class="field">
+    <label>Ort</label>
+    <select class="custom-select" formControlName="location">
+      <option value="" disabled>Ort auswählen</option>
+      <option *ngFor="let location of locations">{{location.name}}</option>
+    </select>
+    <div *ngIf="errors.location" class="ui negative message">
+      {{ errors.location }}
+    </div>
+  </div>-->
+
+          <div class="field">
+            <label>Max. Teilnehmer*innenanzahl</label>
+            <input type="number" formControlName="maxParticipants" />
+            <div *ngIf="errors.maxParticipants" class="ui negative message">
+              {{ errors.maxParticipants }}
+            </div>
+          </div>
+
+          <button type="submit" class="ui button" [disabled]="vaccinationForm.invalid">
+    Speichern
+  </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
