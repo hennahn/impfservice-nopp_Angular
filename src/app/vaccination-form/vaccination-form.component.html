@@ -16,17 +16,26 @@
 
           <div class="field">
             <label>Von (Datum und Uhrzeit)</label>
-            <input type="datetime-local" formControlName="from" />
+            <input type="datetime" formControlName="from" />
             <div *ngIf="errors.from" class="ui negative message">{{ errors.from }}</div>
           </div>
 
           <div class="field">
             <label>Bis (Datum und Uhrzeit)</label>
-            <input type="datetime-local" formControlName="to" />
+            <input type="datetime" formControlName="to" />
             <div *ngIf="errors.to" class="ui negative message">{{ errors.to }}</div>
           </div>
 
-          <!--TODO: LOCATION -->
+          <div class="field">
+            <label>Impfort</label>
+            <select class="custom-select" formControlName="location">
+            <option value="" disabled>Wählen Sie einen Impfort aus</option>
+            <option *ngFor="let l of location" [ngValue]="l.location">{{l.location}}</option>
+          </select>
+            <div *ngIf="errors.location" class="ui negative message">
+              {{ errors.location }}
+            </div>
+          </div>
 
           <div class="field">
             <label>Max. Teilnehmer*innenanzahl</label>

@@ -10,6 +10,7 @@ import { VaccinationListItemComponent } from "./vaccination-list-item/vaccinatio
 import { VaccinationDetailsComponent } from "./vaccination-details/vaccination-details.component";
 import { ImpfserviceService } from "./shared/impfservice.service";
 import { VaccinationFormComponent } from './vaccination-form/vaccination-form.component';
+import { LocationService } from './shared/location.service';
 
 @NgModule({
   imports: [
@@ -27,6 +28,6 @@ import { VaccinationFormComponent } from './vaccination-form/vaccination-form.co
     VaccinationFormComponent
   ],
   bootstrap: [AppComponent],
-  providers: [ImpfserviceService]
+  providers: [ImpfserviceService, LocationService]
 })
 export class AppModule {}

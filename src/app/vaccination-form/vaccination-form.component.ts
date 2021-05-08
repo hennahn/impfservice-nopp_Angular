@@ -10,8 +10,9 @@ import { VaccinationFactory } from '../shared/vaccination-factory';
 import { Vaccination } from '../shared/vaccination';
 import { VaccinationFormErrorMessages } from './vaccination-form-error-messages';
 import { ImpfserviceService } from '../shared/impfservice.service';
+import { Location } from '../shared/location';
+//import { LocationService } from '../shared/location.service';
 //import { VaccinationsValidators } from "../shared/vaccination-validators";
-//TODO: LocationService
 
 @Component({
   selector: 'is-vaccination-form',
@@ -22,13 +23,20 @@ export class VaccinationFormComponent implements OnInit {
   vaccination = VaccinationFactory.empty(); //leeren Termin initial anlegen
   errors: { [key: string]: string } = {};
   isUpdatingVaccination = false; //einen bestehenden Termin updaten ja/nein
+  //locations: Location[];
+  location = [
+    { id: 1, location: 'Sportpark Walding' },
+    { id: 2, location: 'Design Center Linz' },
+    { id: 3, location: 'Ausbildungszentrum Kepler Universitätsklinikum' }
+  ];
 
   constructor(
     private fb: FormBuilder,
     private is: ImpfserviceService,
     private route: ActivatedRoute,
-    private router: Router //TODO: Location Service
-  ) {}
+    private router: Router
+  ) //private ls: LocationService
+  {}
 
   ngOnInit() {
     //hat der Termin bereits einen param id oder nicht (ja->existiert schon)
@@ -50,8 +58,8 @@ export class VaccinationFormComponent implements OnInit {
       id: this.vaccination.id,
       from: [this.vaccination.from, [Validators.required]],
       to: [this.vaccination.to, [Validators.required]],
-      maxParticipants: this.vaccination.maxParticipants
-      //TODO: LOCATION
+      maxParticipants: this.vaccination.maxParticipants,
+      location: this.vaccination.location
     });
     this.vaccinationForm.statusChanges.subscribe(() => {
       this.updateErrorMessages();
@@ -69,7 +77,6 @@ export class VaccinationFormComponent implements OnInit {
         control.errors[message.forValidator] &&
         !this.errors[message.forControl]
       ) {
-        //es geht darum das fehlerhafte feld zu finden und zu checken, ob mit dem feld schon interagiert wurde, damit man nicht errors schmeisst, wenn jmd noch gar nicht interagiert hat. Es wird die erste Fehlermeldung angezeigt, die er findet (nicht alle)
         this.errors[message.forControl] = message.text;
       }
     }

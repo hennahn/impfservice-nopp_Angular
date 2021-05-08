@@ -12,6 +12,10 @@ export const VaccinationFormErrorMessages = [
     'maxParticipants',
     'required',
     'Bitte geben Sie eine maximale Anzahl an Teilnerhmer*innen an.'
+  ),
+  new ErrorMessage(
+    'location',
+    'required',
+    'Bitte geben Sie eine maximale Teilnehmer*innenzahl an.'
   )
-  //TODO: Location Error Message,
 ];

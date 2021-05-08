@@ -16,6 +16,8 @@
           {{vaccination?.location?.houseNo}}, {{vaccination?.location?.zipCode}}
           {{vaccination?.location?.city}}
           <br />
+          <b>max. Teilnehmer*innen: </b>{{vaccination?.maxParticipants}}
+          <br />
         </p>
         <br>
         <a [routerLink]="['../../admin', vaccination?.id]" class="ui icon button edit-btn">
