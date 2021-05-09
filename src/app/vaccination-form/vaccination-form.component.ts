@@ -42,16 +42,17 @@ export class VaccinationFormComponent implements OnInit {
 
   ngOnInit() {
     //hat der Termin bereits einen param id oder nicht (ja->existiert schon)
-    const id = this.route.snapshot.params['id'];
+    const id = this.route.snapshot.params['id']; //id aus der route holen
     this.ls.getAllLocations().subscribe(locations => {
+      //locations holen
       this.locations = locations;
     });
     if (id) {
       this.isUpdatingVaccination = true; //Termin gibt es schon -> möchte ich updaten
       this.is.getSingleVaccination(id).subscribe(vaccination => {
-        //Termin Daten holen mit der id vom gefundenen Termin
+        //Daten holen mit der id vom gefundenen Termin
         this.vaccination = vaccination;
-        this.initVaccination(); //initBook nochmal ausführen, weil asynchron!
+        this.initVaccination(); //init nochmal ausführen, weil asynchron!
       });
     }
     this.initVaccination();
