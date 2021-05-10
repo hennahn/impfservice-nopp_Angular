@@ -13,6 +13,7 @@ import { VaccinationFormErrorMessages } from './vaccination-form-error-messages'
 import { ImpfserviceService } from '../shared/impfservice.service';
 import { Location } from '../shared/location';
 import { LocationService } from '../shared/location.service';
+import { DatePipe } from '@angular/common';
 //import { VaccinationsValidators } from "../shared/vaccination-validators";
 
 @Component({
@@ -37,7 +38,8 @@ export class VaccinationFormComponent implements OnInit {
     private is: ImpfserviceService,
     private route: ActivatedRoute,
     private router: Router,
-    private ls: LocationService
+    private ls: LocationService,
+    private datePipe: DatePipe
   ) {}
 
   ngOnInit() {
@@ -61,11 +63,11 @@ export class VaccinationFormComponent implements OnInit {
   initVaccination() {
     //Formular Model bauen
     this.vaccinationForm = this.fb.group({
-      id: this.vaccination.id,
-      from: [this.vaccination.from, [Validators.required]],
-      to: [this.vaccination.to, [Validators.required]],
+      //id: this.vaccination.id,
+      from: [this.datePipe.transform(this.vaccination?.from, "yyyy-MM-dd HH:mm:ss"), [Validators.required]],
+      to: [this.datePipe.transform(this.vaccination?.to, "yyyy-MM-dd HH:mm:ss"), [Validators.required]],
       maxParticipants: this.vaccination.maxParticipants,
-      location: this.vaccination.location
+      location: [this.vaccination.location_id, [Validators.required]]
     });
     this.vaccinationForm.statusChanges.subscribe(() => {
       this.updateErrorMessages();
@@ -89,19 +91,26 @@ export class VaccinationFormComponent implements OnInit {
   }
 
   submitForm() {
-    const updatedVaccination: Vaccination = VaccinationFactory.fromObject(
+    /*this.vaccination = VaccinationFactory.fromObject(
       this.vaccinationForm.value
-    );
-    console.log(updatedVaccination);
+    );*/
+    const val = this.vaccinationForm.value;
+
+    //werte direkt auslesen, die ich für das reactive form gesetzt habe
+    this.vaccination.from = val.from;
+    this.vaccination.to = val.to;
+    this.vaccination.location_id = val.location;
+    this.vaccination.maxParticipants = val.maxParticipants;
+    console.log(this.vaccination);
 
     if (this.isUpdatingVaccination) {
-      this.is.updateVaccination(updatedVaccination).subscribe(res => {
-        this.router.navigate(['../../vaccinations', updatedVaccination.id], {
+      this.is.updateVaccination(this.vaccination).subscribe(res => {
+        this.router.navigate(['../../vaccinations', this.vaccination.id], {
           relativeTo: this.route
         });
       });
     } else {
-      this.is.createVaccination(updatedVaccination).subscribe(res => {
+      this.is.createVaccination(this.vaccination).subscribe(res => {
         this.router.navigate(['../vaccinations'], {
           relativeTo: this.route
         });

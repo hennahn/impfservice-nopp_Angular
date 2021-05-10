@@ -28,9 +28,9 @@
           <div class="field">
             <label>Impfort</label>
             <select class="custom-select" placeholder="Wählen Sie einen Impfort" formControlName="location">
-              <option value="" disabled>Wählen Sie einen Impfort</option>
+              <option disabled>Wählen Sie einen Impfort</option>
               <!--<option value="">---</option>-->
-              <option *ngFor="let location of locations">{{location.name}}</option>
+              <option [ngValue]="location.id" *ngFor="let location of locations">{{location.name}}</option>
             </select>
             <div *ngIf="errors.location" class="ui negative message">
               {{ errors.location }}

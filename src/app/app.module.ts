@@ -11,7 +11,7 @@ import { VaccinationDetailsComponent } from './vaccination-details/vaccination-d
 import { ImpfserviceService } from './shared/impfservice.service';
 import { VaccinationFormComponent } from './vaccination-form/vaccination-form.component';
 import { LocationService } from './shared/location.service';
-import { registerLocaleData } from '@angular/common';
+import { DatePipe, registerLocaleData } from '@angular/common';
 import localeDe from '@angular/common/locales/de';
 import { LOCALE_ID } from '@angular/core';
 
@@ -36,7 +36,8 @@ registerLocaleData(localeDe);
   providers: [
     ImpfserviceService,
     LocationService,
-    { provide: LOCALE_ID, useValue: 'de' }
+    { provide: LOCALE_ID, useValue: 'de' },
+    DatePipe
   ]
 })
 export class AppModule {}
