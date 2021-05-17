@@ -162,3 +162,10 @@ select {
   border-radius: 4px !important;
   font-family: 'Karla', sans-serif !important;
 }
+
+/* ================ FOOTER ================ */
+
+.footer {
+  border-radius: 0 !important;
+  padding: 20px 30px !important;
+}

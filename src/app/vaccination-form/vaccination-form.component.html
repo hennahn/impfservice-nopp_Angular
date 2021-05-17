@@ -10,6 +10,9 @@
       </div>
 
       <div class="column">
+        <h2 *ngIf="isUpdatingVaccination">Termin bearbeiten</h2>
+        <h2 *ngIf="!isUpdatingVaccination">Neuen Termin erstellen</h2>
+
         <form class="ui large form" [formGroup]="vaccinationForm" (ngSubmit)="submitForm()">
           <input type="hidden" name="id" />
 
@@ -53,3 +56,4 @@
     </div>
   </div>
 </div>
+<div class="ui inverted segment footer">© 2021 Hannah Nopp</div>

@@ -25,11 +25,8 @@
             </tr>
           </thead>
           <tbody>
-            <tr
-              *ngFor="let vaccination of vaccinations"
-              class="is-vaccination-list-item"
-              [vaccination]="vaccination"
-            ></tr>
+            <tr *ngFor="let vaccination of vaccinations" class="is-vaccination-list-item" [vaccination]="vaccination">
+            </tr>
           </tbody>
         </table>
       </div>
@@ -78,3 +75,4 @@
     </div>
   </div>
 </div>
+<div class="ui inverted segment footer">© 2021 Hannah Nopp</div>
