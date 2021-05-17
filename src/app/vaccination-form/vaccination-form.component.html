@@ -14,13 +14,13 @@
           <input type="hidden" name="id" />
 
           <div class="field">
-            <label>Von</label>
+            <label>Von (Datum + Uhrzeit)</label>
             <input type="datetime" formControlName="from"/>
             <div *ngIf="errors.from" class="ui negative message">{{ errors.from }}</div>
           </div>
 
           <div class="field">
-            <label>Bis</label>
+            <label>Bis (Datum + Uhrzeit)</label>
             <input type="datetime" formControlName="to" />
             <div *ngIf="errors.to" class="ui negative message">{{ errors.to }}</div>
           </div>
