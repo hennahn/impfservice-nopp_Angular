@@ -14,8 +14,9 @@ export const VaccinationFormErrorMessages = [
     'Bitte geben Sie eine maximale Anzahl an Teilnerhmer*innen an.'
   ),
   new ErrorMessage(
-    'location',
-    'required',
-    'Bitte geben Sie eine maximale Teilnehmer*innenzahl an.'
-  )
+    'maxParticipants',
+    'min',
+    'Zu dem Impftermin muss sich mindesten 1 Teilnehmer*in anmelden können.'
+  ),
+  new ErrorMessage('location', 'required', 'Bitte geben Sie einen Ort an.')
 ];

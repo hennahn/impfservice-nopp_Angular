@@ -66,7 +66,7 @@ export class VaccinationFormComponent implements OnInit {
       //id: this.vaccination.id,
       from: [this.datePipe.transform(this.vaccination?.from, "yyyy-MM-dd HH:mm:ss"), [Validators.required]],
       to: [this.datePipe.transform(this.vaccination?.to, "yyyy-MM-dd HH:mm:ss"), [Validators.required]],
-      maxParticipants: this.vaccination.maxParticipants,
+      maxParticipants: [this.vaccination.maxParticipants, [Validators.required, , Validators.min(1)]],
       location: [this.vaccination.location_id, [Validators.required]]
     });
     this.vaccinationForm.statusChanges.subscribe(() => {
@@ -75,6 +75,7 @@ export class VaccinationFormComponent implements OnInit {
   }
 
   updateErrorMessages() {
+    console.log("Is invalid? " + this.vaccinationForm.invalid);
     this.errors = {};
     for (const message of VaccinationFormErrorMessages) {
       const control = this.vaccinationForm.get(message.forControl); //Control finden und speichern
