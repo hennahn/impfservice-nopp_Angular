@@ -1,0 +1,68 @@
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import jwt_decode from 'jwt-decode';
+
+//TODO: rolle + impfstatus im interface hinzufügen
+interface Token {
+  exp: number;
+  user: {
+    id: string;
+  };
+}
+
+@Injectable()
+export class AuthenticationService {
+  private api: string =
+    'https://impfservice.s1810456023.student.kwmhgb.at/api/auth'; //URL zum REST_Service
+
+  constructor(private http: HttpClient) {} //REST-Calls über HttpClient absetzen
+
+  /**
+   * REST-Call absetzen => post, weil wir daten mitschicken
+   * dann in backticks api aufrufen, login-methode dranhängen und parameter email + pw mitgeben
+   */
+  login(email: string, password: string) {
+    return this.http.post(`${this.api}/login`, {
+      email: email,
+      password: password
+    });
+  }
+
+  /**
+   * Token im Local Storage speichern
+   * decoden passiert mit dem package jwt-decode
+   * wir wollen den token als Token speichern, daher implementieren wir ein eigenes interface
+   */
+  public setLocalStorage(token: string) {
+    localStorage.setItem('token', token);
+    const decodedToken = jwt_decode(token) as Token;
+    localStorage.setItem('userId', decodedToken.user.id); //TODO: rolle + impfstatus mitgeben
+  }
+
+  public logout() {
+    this.http.post(`${this.api}/logout`, {});
+    localStorage.removeItem('token');
+    localStorage.removeItem('userId'); //TODO: rolle + impfstatus rauslöschen (?)
+  }
+
+  public isLoggedIn() {
+    //zuerst überprüfen, ob ein token im local storage exisitert
+    if (localStorage.getItem('token')) {
+      let token = localStorage.getItem('token'); //token holen
+      const decodedToken = jwt_decode(token) as Token; //token decodieren (gleich wie oben)
+      let expirationDate: Date = new Date(0); //leeres Datum anlegen
+      expirationDate.setUTCSeconds(decodedToken.exp); //im Datum das exp_date des tokens speichern
+      if (expirationDate < new Date()) {
+        console.log('Unser Token ist expired!'); //überprüfen, ob das token noch gültig ist
+        localStorage.removeItem('token'); //wenn das token abgelaufen ist, löschen & false returnen
+        return false;
+      }
+      return true; //token ist in ordnung und gültig
+    }
+    return false;
+  }
+
+  isLoggedOut() {
+    return !this.isLoggedIn();
+  }
+}

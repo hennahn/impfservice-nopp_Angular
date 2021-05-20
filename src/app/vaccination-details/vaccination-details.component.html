@@ -23,10 +23,11 @@
           <br />
         </p>
         <br>
-        <a [routerLink]="['../../admin', vaccination?.id]" class="ui icon button edit-btn">
+        <a *ngIf="authService.isLoggedIn()" [routerLink]="['../../admin', vaccination?.id]"
+          class="ui icon button edit-btn">
           <i class="write icon"></i> Termin bearbeiten
         </a>
-        <button class="ui icon button remove-btn" (click)="removeVaccination()"> <i class="remove icon"></i> Termin löschen</button>
+        <button *ngIf="authService.isLoggedIn()" class="ui icon button remove-btn" (click)="removeVaccination()"> <i class="remove icon"></i> Termin löschen</button>
       </div>
     </div>
   </div>

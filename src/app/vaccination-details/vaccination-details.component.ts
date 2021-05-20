@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Vaccination } from '../shared/vaccination';
 import { VaccinationFactory } from '../shared/vaccination-factory';
 import { ImpfserviceService } from '../shared/impfservice.service';
+import { AuthenticationService } from '../shared/authentication.service';
 
 @Component({
   selector: 'is-vaccination-details',
@@ -14,7 +15,8 @@ export class VaccinationDetailsComponent implements OnInit {
   constructor(
     private is: ImpfserviceService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    public authService: AuthenticationService
   ) {}
 
   ngOnInit() {

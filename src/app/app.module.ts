@@ -4,7 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { VaccinationListComponent } from './vaccination-list/vaccination-list.component';
 import { VaccinationListItemComponent } from './vaccination-list-item/vaccination-list-item.component';
 import { VaccinationDetailsComponent } from './vaccination-details/vaccination-details.component';
@@ -14,6 +14,8 @@ import { LocationService } from './shared/location.service';
 import { DatePipe, registerLocaleData } from '@angular/common';
 import localeDe from '@angular/common/locales/de';
 import { LOCALE_ID } from '@angular/core';
+import { LoginComponent } from './login/login.component';
+import { AuthenticationService } from './shared/authentication.service';
 
 registerLocaleData(localeDe);
 
@@ -30,14 +32,26 @@ registerLocaleData(localeDe);
     VaccinationListComponent,
     VaccinationListItemComponent,
     VaccinationDetailsComponent,
-    VaccinationFormComponent
+    VaccinationFormComponent,
+    LoginComponent
   ],
   bootstrap: [AppComponent],
   providers: [
     ImpfserviceService,
     LocationService,
-    { provide: LOCALE_ID, useValue: 'de' },
-    DatePipe
+    DatePipe,
+    AuthenticationService,
+    /*{
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: JwtInterceptorService,
+      multi: true
+    },*/
+    { provide: LOCALE_ID, useValue: 'de' }
   ]
 })
 export class AppModule {}
