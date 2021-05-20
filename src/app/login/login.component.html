@@ -15,13 +15,13 @@
 loginForm.get('username').touched) &&
 loginForm.get('username').hasError('required')" class="ui negative
 message">
-                Benutzername ist verpflichtend </div>
+                Bitte geben Sie Ihre E-Mail Adresse ein.</div>
               <div *ngIf="loginForm.get('username').invalid &&
 (loginForm.get('username').dirty ||
 loginForm.get('username').touched) &&
 loginForm.get('username').hasError('email')" class="ui negative
 message">
-                E-Mail Format überprüfen </div>
+                Bitte überprüfen Sie das Format Ihrer E-Mail Adresse.</div>
             </div>
             <div class="field">
               <label>Passwort</label>
@@ -29,7 +29,7 @@ message">
               <div *ngIf="loginForm.get('password').invalid &&
 (loginForm.get('password').dirty ||
 loginForm.get('password').touched)" class="ui negative message">
-                Passwort ist verpflichtend </div>
+                Bitte geben Sie Ihr Passwort ein.</div>
             </div>
             <button type="submit" class="ui button primary-btn"
 [disabled]="loginForm.invalid">Anmelden</button>
