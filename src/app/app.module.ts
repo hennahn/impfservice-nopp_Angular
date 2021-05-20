@@ -16,6 +16,8 @@ import localeDe from '@angular/common/locales/de';
 import { LOCALE_ID } from '@angular/core';
 import { LoginComponent } from './login/login.component';
 import { AuthenticationService } from './shared/authentication.service';
+import { TokenInterceptorService } from './shared/token-interceptor.service';
+import { JwtInterceptorService } from './shared/jwt-interceptor.service';
 
 registerLocaleData(localeDe);
 
@@ -41,7 +43,7 @@ registerLocaleData(localeDe);
     LocationService,
     DatePipe,
     AuthenticationService,
-    /*{
+    {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptorService,
       multi: true
@@ -50,7 +52,7 @@ registerLocaleData(localeDe);
       provide: HTTP_INTERCEPTORS,
       useClass: JwtInterceptorService,
       multi: true
-    },*/
+    },
     { provide: LOCALE_ID, useValue: 'de' }
   ]
 })

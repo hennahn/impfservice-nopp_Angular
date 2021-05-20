@@ -4,6 +4,8 @@
       <div class="column">
         <div *ngIf="!isLoggedIn()">
           <h1>Login</h1>
+          <p>Melden Sie sich mit Ihrer E-Mail Adresse und Ihrem Passwort an, um sich für Impftermine anmelden zu können
+            oder als Admin Zugriff auf die Verwaltung zu haben.</p>
           <form class="ui large form" [formGroup]="loginForm" (ngSubmit)="login()">
             <div class="field">
               <label>E-Mail</label>
@@ -34,6 +36,8 @@ loginForm.get('password').touched)" class="ui negative message">
           </form>
         </div>
         <div *ngIf="isLoggedIn()">
+          <h1>Logout</h1>
+          <p>Hier können Sie sich wieder aus der Impfplattform ausloggen.</p>
           <button type="button" class="ui button primary-btn"
 (click)="logout()">Abmelden</button>
         </div>
@@ -41,3 +45,4 @@ loginForm.get('password').touched)" class="ui negative message">
     </div>
   </div>
 </div>
+<div class="ui inverted segment footer">© 2021 Hannah Nopp</div>
