@@ -7,6 +7,8 @@ interface Token {
   exp: number;
   user: {
     id: string;
+    isAdmin: boolean;
+    status: boolean;
   };
 }
 
@@ -36,13 +38,17 @@ export class AuthenticationService {
   public setLocalStorage(token: string) {
     localStorage.setItem('token', token);
     const decodedToken = jwt_decode(token) as Token;
-    localStorage.setItem('userId', decodedToken.user.id); //TODO: rolle + impfstatus mitgeben
+    localStorage.setItem('userId', decodedToken.user.id);
+    localStorage.setItem('isAdmin', decodedToken.user.isAdmin.toString());
+    localStorage.setItem('status', decodedToken.user.status.toString());
   }
 
   public logout() {
     this.http.post(`${this.api}/logout`, {});
     localStorage.removeItem('token');
-    localStorage.removeItem('userId'); //TODO: rolle + impfstatus rauslöschen (?)
+    localStorage.removeItem('userId');
+    localStorage.removeItem('isAdmin');
+    localStorage.removeItem('status');
   }
 
   public isLoggedIn() {
