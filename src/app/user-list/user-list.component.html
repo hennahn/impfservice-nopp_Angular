@@ -1,0 +1,12 @@
+<table class="ui compact celled table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>E-Mail Adresse</th>
+      <th>Sozialversicherungsnummer</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users" class="is-user-list-item" [user]="user"></tr>
+  </tbody>
+</table>

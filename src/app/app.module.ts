@@ -18,6 +18,9 @@ import { LoginComponent } from './login/login.component';
 import { AuthenticationService } from './shared/authentication.service';
 import { TokenInterceptorService } from './shared/token-interceptor.service';
 import { JwtInterceptorService } from './shared/jwt-interceptor.service';
+import { UserService } from './shared/user.service';
+import { UserListComponent } from './user-list/user-list.component';
+import { UserListItemComponent } from './user-list-item/user-list-item.component';
 
 registerLocaleData(localeDe);
 
@@ -35,7 +38,9 @@ registerLocaleData(localeDe);
     VaccinationListItemComponent,
     VaccinationDetailsComponent,
     VaccinationFormComponent,
-    LoginComponent
+    LoginComponent,
+    UserListComponent,
+    UserListItemComponent
   ],
   bootstrap: [AppComponent],
   providers: [
@@ -43,6 +48,7 @@ registerLocaleData(localeDe);
     LocationService,
     DatePipe,
     AuthenticationService,
+    UserService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptorService,

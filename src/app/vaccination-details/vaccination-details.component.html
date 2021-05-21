@@ -23,6 +23,11 @@
           <br />
         </p>
         <br>
+        <h2>Angemeldete Teilnehmer*innen</h2>
+        <!-- TODO: User*innen ausgeben -->
+        <is-user-list *ngIf="authService.isLoggedIn()"></is-user-list>
+        <br>
+        <br>
         <div *ngIf="!authService.isLoggedIn()" class="ui icon message">
           <i class="info circle icon"></i>
           <div class="content">
