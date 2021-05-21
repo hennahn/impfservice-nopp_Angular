@@ -23,6 +23,14 @@
           <br />
         </p>
         <br>
+        <div *ngIf="!authService.isLoggedIn()" class="ui icon message">
+          <i class="info circle icon"></i>
+          <div class="content">
+            <h3>Sie sind nicht angemeldet.</h3>
+            <p>Um sich für diesen Impftermin anmelden oder als Admin verwalten zu können, müssen Sie sich <a
+                routerLink="../../login" class="linkintext">einloggen</a>.</p>
+          </div>
+        </div>
         <a *ngIf="authService.isLoggedIn()" [routerLink]="['../../admin', vaccination?.id]"
           class="ui icon button edit-btn">
           <i class="write icon"></i> Termin bearbeiten

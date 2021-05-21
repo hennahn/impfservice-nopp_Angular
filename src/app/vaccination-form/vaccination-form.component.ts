@@ -14,7 +14,6 @@ import { ImpfserviceService } from '../shared/impfservice.service';
 import { Location } from '../shared/location';
 import { LocationService } from '../shared/location.service';
 import { DatePipe } from '@angular/common';
-//import { VaccinationsValidators } from "../shared/vaccination-validators";
 
 @Component({
   selector: 'is-vaccination-form',
