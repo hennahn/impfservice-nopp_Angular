@@ -1,3 +1,11 @@
 <td>{{user?.firstName}} {{user?.lastName}}</td>
 <td>{{user?.email}}</td>
+<td>{{user?.street}} {{user?.houseNo}}, {{user?.zipCode}} {{user?.city}}</td>
 <td>{{user?.ssno}}</td>
+<td><select class="custom-select" placeholder="Impfstatus" formControlName="status">
+      <option disabled>Impfstatus</option>
+      <!-- Korrekten Impfstatus der Person ausgeben -->
+      <option>Nicht geimpft</option>
+      <option>Geimpft</option>
+    </select>
+</td>

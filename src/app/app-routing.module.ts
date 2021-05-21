@@ -5,6 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { VaccinationDetailsComponent } from './vaccination-details/vaccination-details.component';
 import { VaccinationFormComponent } from './vaccination-form/vaccination-form.component';
 import { VaccinationListComponent } from './vaccination-list/vaccination-list.component';
+import { UserListComponent } from './user-list/user-list.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'vaccinations/:id', component: VaccinationDetailsComponent },
   { path: 'admin', component: VaccinationFormComponent },
   { path: 'admin/:id', component: VaccinationFormComponent },
-  { path: 'login', component: LoginComponent }
+  { path: 'login', component: LoginComponent },
+  { path: 'users', component: UserListComponent }
 ];
 
 @NgModule({

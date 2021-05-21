@@ -2,7 +2,7 @@ import { Vaccination } from './vaccination';
 
 export class VaccinationFactory {
   static empty(): Vaccination {
-    return new Vaccination(null, new Date(), new Date(), 0, null, null); //TODO: location_id soll hier mitgegeben werden, vorerst null
+    return new Vaccination(null, new Date(), new Date(), 0, null, null);
   }
 
   //erzeugt ein leeres vaccination objekt aus untypisiertem json

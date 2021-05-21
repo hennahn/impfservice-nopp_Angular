@@ -1,12 +1,36 @@
-<table class="ui compact celled table">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>E-Mail Adresse</th>
-      <th>Sozialversicherungsnummer</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let user of users" class="is-user-list-item" [user]="user"></tr>
-  </tbody>
-</table>
+<div class="ui container center aligned topcontainer">
+  <div class="ui stackable middle center aligned three column grid">
+    <div class="one column row">
+      <div class="column">
+        <h1>Personenverwaltung</h1>
+        <p>
+          Hier finden Sie eine Übersicht aller Personen, die auf der Impfplattform registriert sind. Als
+          Administrator*in können Sie hier den
+          Impfstatus einer Person anpassen.
+        </p>
+      </div>
+    </div>
+
+    <!-- TODO: Hier nur Impfwillige anzeigen oder alle? wenn alle eingezeigt werden -> mit Rolle (weotere Spalte) -->
+
+    <div class="one column row">
+      <div class="column">
+        <table class="ui compact celled table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>E-Mail Adresse</th>
+              <th>Adresse</th>
+              <th>SVNR</th>
+              <th>Impfstatus</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of users" class="is-user-list-item" [user]="user"></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="ui inverted segment footer">© 2021 Hannah Nopp</div>
