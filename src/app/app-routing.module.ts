@@ -12,8 +12,8 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'vaccinations', component: VaccinationListComponent },
   { path: 'vaccinations/:id', component: VaccinationDetailsComponent },
-  { path: 'admin', component: VaccinationFormComponent },
-  { path: 'admin/:id', component: VaccinationFormComponent },
+  { path: 'editor', component: VaccinationFormComponent },
+  { path: 'editor/:id', component: VaccinationFormComponent },
   { path: 'login', component: LoginComponent },
   { path: 'users', component: UserListComponent }
 ];

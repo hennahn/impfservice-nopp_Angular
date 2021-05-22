@@ -21,7 +21,6 @@ import { JwtInterceptorService } from './shared/jwt-interceptor.service';
 import { UserService } from './shared/user.service';
 import { UserListComponent } from './user-list/user-list.component';
 import { UserListItemComponent } from './user-list-item/user-list-item.component';
-import { UserDetailsComponent } from './user-details/user-details.component';
 
 registerLocaleData(localeDe);
 
@@ -41,8 +40,7 @@ registerLocaleData(localeDe);
     VaccinationFormComponent,
     LoginComponent,
     UserListComponent,
-    UserListItemComponent,
-    UserDetailsComponent
+    UserListItemComponent
   ],
   bootstrap: [AppComponent],
   providers: [

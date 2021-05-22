@@ -34,7 +34,7 @@
                 routerLink="../../login" class="linkintext">einloggen</a>.</p>
           </div>
         </div>
-        <a *ngIf="authService.isLoggedIn()" [routerLink]="['../../admin', vaccination?.id]"
+        <a *ngIf="authService.isLoggedIn()" [routerLink]="['../../editor', vaccination?.id]"
           class="ui icon button edit-btn">
           <i class="write icon"></i> Termin bearbeiten
         </a>
