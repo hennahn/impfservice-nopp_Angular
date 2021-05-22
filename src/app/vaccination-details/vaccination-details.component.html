@@ -34,11 +34,11 @@
                 routerLink="../../login" class="linkintext">einloggen</a>.</p>
           </div>
         </div>
-        <a *ngIf="authService.isLoggedIn()" [routerLink]="['../../editor', vaccination?.id]"
+        <a *ngIf="authService.isLoggedIn() && authService.isAdmin()" [routerLink]="['../../editor', vaccination?.id]"
           class="ui icon button edit-btn">
           <i class="write icon"></i> Termin bearbeiten
         </a>
-        <button *ngIf="authService.isLoggedIn()" class="ui icon button remove-btn" (click)="removeVaccination()"> <i class="remove icon"></i> Termin löschen</button>
+        <button *ngIf="authService.isLoggedIn() && authService.isAdmin()" class="ui icon button remove-btn" (click)="removeVaccination()"> <i class="remove icon"></i> Termin löschen</button>
       </div>
     </div>
   </div>

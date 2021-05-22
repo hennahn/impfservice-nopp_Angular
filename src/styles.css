@@ -188,10 +188,16 @@ select {
   font-family: 'Karla', sans-serif !important;
 }
 
-/* ================ ICONS ================ */
+/* ================ ICONS & BILDER ================ */
 
 .info {
   color: var(--backgrounddarker);
+}
+
+.img-pos {
+  padding-top: 50px;
+  max-width: 400px !important;
+  margin: auto;
 }
 
 /* ================ FOOTER ================ */

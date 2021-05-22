@@ -71,4 +71,19 @@ export class AuthenticationService {
   isLoggedOut() {
     return !this.isLoggedIn();
   }
+
+  public isAdmin() {
+    if (localStorage.getItem('token')) {
+      let token = localStorage.getItem('token');
+      const decodedToken = jwt_decode(token) as Token;
+      if (decodedToken.user.isAdmin == true) {
+        console.log('User*in ist ein Admin.');
+        return true;
+      } else {
+        console.log('User*in ist kein Admin.');
+        return false;
+      }
+    }
+    return false;
+  }
 }

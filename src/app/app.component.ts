@@ -14,6 +14,10 @@ export class AppComponent {
     return this.authService.isLoggedIn();
   }
 
+  isAdmin() {
+    return this.authService.isAdmin();
+  }
+
   /**
    * im menü wird je nach login/logout das richtige label angezeigt
    */

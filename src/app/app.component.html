@@ -3,8 +3,9 @@
     <a routerLink="home" routerLinkActive="active" class="item">Startseite </a>
     <a routerLink="vaccinations" routerLinkActive="active" class="item">Terminübersicht
     </a>
-    <a *ngIf="isLoggedIn()" routerLink="editor" routerLinkActive="active" class="item">Termin Editor</a>
-    <a *ngIf="isLoggedIn()" routerLink="users" routerLinkActive="active" class="item">Personenverwaltung</a>
+    <a *ngIf="isLoggedIn() && isAdmin()" routerLink="editor" routerLinkActive="active" class="item">Termin Editor</a>
+    <a *ngIf="isLoggedIn() && isAdmin()" routerLink="users" routerLinkActive="active"
+      class="item">Personenverwaltung</a>
     <a routerLink="login" routerLinkActive="active" class="item">{{getLoginLabel()}}</a>
   </div>
 </div>
