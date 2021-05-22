@@ -39,6 +39,18 @@
           <i class="write icon"></i> Termin bearbeiten
         </a>
         <button *ngIf="authService.isLoggedIn() && authService.isAdmin()" class="ui icon button remove-btn" (click)="removeVaccination()"> <i class="remove icon"></i> Termin löschen</button>
+
+        <h2>Zur Impfung anmelden</h2>
+        <!-- TODO: (click)="" für die anmeldung implementieren-->
+        <button *ngIf="authService.isLoggedIn() && !authService.isVaccined()" class="ui icon button primary-btn"> <i class="calendar check icon"></i> Jetzt anmelden</button>
+        <div *ngIf="authService.isVaccined()" class="ui icon message">
+          <i class="info circle icon"></i>
+          <div class="content">
+            <h3>Sie sind bereits geimpft.</h3>
+            <p>Sie haben Ihre Impfung bereits erhalten und können sich daher nicht für einen weiteren Termin anmelden.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
