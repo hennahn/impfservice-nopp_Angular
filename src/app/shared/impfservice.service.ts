@@ -49,7 +49,10 @@ export class ImpfserviceService {
 
   bookVaccination(userId, vaccinationId): Observable<any> {
     return this.http
-      .put(`${this.api}/vaccinations/${vaccinationId}/book`, { userId, vaccinationId })
+      .put(`${this.api}/vaccinations/${vaccinationId}/book`, {
+        userId,
+        vaccinationId
+      })
       .pipe(retry(3))
       .pipe(catchError(this.errorHandler));
   }
@@ -57,12 +60,4 @@ export class ImpfserviceService {
   private errorHandler(error: Error | any) {
     return throwError(error);
   }
-
-
-  /*check(id: Number): Observable<Boolean> {
-    return this.http
-      .get<Boolean>(`${this.api}/vaccinations/checkId/${id}`)
-      .pipe(retry(3))
-      .pipe(catchError(this.errorHandler));
-  }*/
 }

@@ -17,7 +17,6 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'users', component: UserListComponent },
   { path: 'vaccinations/:id/book', component: VaccinationDetailsComponent }
-
 ];
 
 @NgModule({

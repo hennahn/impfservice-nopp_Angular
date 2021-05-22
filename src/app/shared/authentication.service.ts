@@ -9,6 +9,7 @@ interface Token {
     id: string;
     isAdmin: boolean;
     status: boolean;
+    vaccination_id: number;
   };
 }
 
@@ -41,6 +42,10 @@ export class AuthenticationService {
     localStorage.setItem('userId', decodedToken.user.id);
     localStorage.setItem('isAdmin', decodedToken.user.isAdmin.toString());
     localStorage.setItem('status', decodedToken.user.status.toString());
+    localStorage.setItem(
+      'vaccination_id',
+      decodedToken.user.vaccination_id.toString()
+    );
   }
 
   public logout() {
@@ -49,6 +54,7 @@ export class AuthenticationService {
     localStorage.removeItem('userId');
     localStorage.removeItem('isAdmin');
     localStorage.removeItem('status');
+    localStorage.removeItem('vaccination_id');
   }
 
   public isLoggedIn() {
@@ -107,5 +113,18 @@ export class AuthenticationService {
       return decodedToken.user.id;
     }
     return null;
+  }
+
+  //Problem: wird im token mitgespeichert, ändert sich also nur, wenn man sich neu einloggt --> ändern!
+  public checkVaccinationIdOfUser() {
+    if (localStorage.getItem('token')) {
+      let token = localStorage.getItem('token');
+      const decodedToken = jwt_decode(token) as Token;
+      if (decodedToken.user.vaccination_id != null) {
+        return true;
+      }
+      return false;
+    }
+    return false;
   }
 }

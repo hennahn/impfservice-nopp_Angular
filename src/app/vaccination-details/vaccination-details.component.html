@@ -40,9 +40,22 @@
         </a>
         <button *ngIf="authService.isLoggedIn() && authService.isAdmin()" class="ui icon button remove-btn" (click)="removeVaccination()"> <i class="remove icon"></i> Termin löschen</button>
 
-        <h2>Zur Impfung anmelden</h2>
-        <!-- TODO: (click)="" für die anmeldung implementieren-->
-        <button *ngIf="authService.isLoggedIn() && !authService.isVaccined()" class="ui icon button primary-btn" (click)="bookVaccination()"> <i class="calendar check icon"></i> Jetzt anmelden</button>
+        <h2 *ngIf="authService.isLoggedIn()">Zur Impfung anmelden</h2>
+
+        <button *ngIf="!authService.checkVaccinationIdOfUser() && authService.isLoggedIn() && !authService.isVaccined()" class="ui icon button primary-btn" (click)="bookVaccination()">
+          <i class="calendar check icon"></i> Jetzt anmelden
+        </button>
+
+        <div *ngIf="authService.checkVaccinationIdOfUser()" class="ui icon message">
+          <i class="info circle icon"></i>
+          <div class="content">
+            <h3>Sie haben bereits einen Termin.</h3>
+            <p>Sie haben sich schon für eine Impfung angemeldet und können sich daher nicht für einen weiteren Termin
+              anmelden.
+            </p>
+          </div>
+        </div>
+
         <div *ngIf="authService.isVaccined()" class="ui icon message">
           <i class="info circle icon"></i>
           <div class="content">
@@ -51,6 +64,7 @@
             </p>
           </div>
         </div>
+
       </div>
     </div>
   </div>
