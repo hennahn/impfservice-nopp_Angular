@@ -47,9 +47,17 @@ export class ImpfserviceService {
       .pipe(catchError(this.errorHandler));
   }
 
+  bookVaccination(userId, vaccinationId): Observable<any> {
+    return this.http
+      .put(`${this.api}/vaccinations/${vaccinationId}/book`, { userId, vaccinationId })
+      .pipe(retry(3))
+      .pipe(catchError(this.errorHandler));
+  }
+
   private errorHandler(error: Error | any) {
     return throwError(error);
   }
+
 
   /*check(id: Number): Observable<Boolean> {
     return this.http

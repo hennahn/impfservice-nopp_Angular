@@ -104,12 +104,14 @@ export class VaccinationFormComponent implements OnInit {
     console.log(this.vaccination);
 
     if (this.isUpdatingVaccination) {
+      //wenn es sich um einen bestehenden Termin handelt 
       this.is.updateVaccination(this.vaccination).subscribe(res => {
         this.router.navigate(['../../vaccinations', this.vaccination.id], {
           relativeTo: this.route
         });
       });
     } else {
+      //wenn es sich um einen neuen Termin handelt
       this.is.createVaccination(this.vaccination).subscribe(res => {
         this.router.navigate(['../vaccinations'], {
           relativeTo: this.route

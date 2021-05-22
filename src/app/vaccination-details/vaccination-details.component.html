@@ -42,7 +42,7 @@
 
         <h2>Zur Impfung anmelden</h2>
         <!-- TODO: (click)="" für die anmeldung implementieren-->
-        <button *ngIf="authService.isLoggedIn() && !authService.isVaccined()" class="ui icon button primary-btn"> <i class="calendar check icon"></i> Jetzt anmelden</button>
+        <button *ngIf="authService.isLoggedIn() && !authService.isVaccined()" class="ui icon button primary-btn" (click)="bookVaccination()"> <i class="calendar check icon"></i> Jetzt anmelden</button>
         <div *ngIf="authService.isVaccined()" class="ui icon message">
           <i class="info circle icon"></i>
           <div class="content">

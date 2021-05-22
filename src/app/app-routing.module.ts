@@ -15,7 +15,9 @@ const routes: Routes = [
   { path: 'editor', component: VaccinationFormComponent },
   { path: 'editor/:id', component: VaccinationFormComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'users', component: UserListComponent }
+  { path: 'users', component: UserListComponent },
+  { path: 'vaccinations/:id/book', component: VaccinationDetailsComponent }
+
 ];
 
 @NgModule({

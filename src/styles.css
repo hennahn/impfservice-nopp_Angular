@@ -29,7 +29,8 @@ body {
 /* ================ CONTAINERS / GRID / ROWS ================ */
 
 .topcontainer {
-  padding: 80px 0px;
+  padding: 80px 0px 120px 0px;
+  margin-bottom: 50px;
 }
 
 .row {
@@ -190,7 +191,8 @@ select {
 
 /* ================ ICONS & BILDER ================ */
 
-.info {
+.info,
+.question {
   color: var(--backgrounddarker);
 }
 

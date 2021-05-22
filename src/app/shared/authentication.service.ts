@@ -99,4 +99,13 @@ export class AuthenticationService {
     }
     return false;
   }
+
+  public getUserId() {
+    if (localStorage.getItem('token')) {
+      let token = localStorage.getItem('token');
+      const decodedToken = jwt_decode(token) as Token;
+      return decodedToken.user.id;
+    }
+    return null;
+  }
 }
