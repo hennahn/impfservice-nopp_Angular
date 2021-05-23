@@ -27,7 +27,7 @@
         <!-- TODO: User*innen ausgeben -->
         <br>
         <div *ngIf="!authService.isLoggedIn()" class="ui icon message">
-          <i class="info circle icon"></i>
+          <i class="lock icon color-reddark"></i>
           <div class="content">
             <h3>Sie sind nicht angemeldet.</h3>
             <p>Um sich für diesen Impftermin anmelden oder als Admin verwalten zu können, müssen Sie sich <a
@@ -42,22 +42,22 @@
 
         <h2 *ngIf="authService.isLoggedIn()">Zur Impfung anmelden</h2>
 
-        <button *ngIf="!authService.checkVaccinationIdOfUser() && authService.isLoggedIn() && !authService.isVaccined()" class="ui icon button primary-btn" (click)="bookVaccination()">
+        <button *ngIf="authService.isLoggedIn() && !authService.isVaccined() && !user?.vaccination_id" class="ui icon button primary-btn" (click)="bookVaccination()">
           <i class="calendar check icon"></i> Jetzt anmelden
         </button>
 
-        <div *ngIf="authService.checkVaccinationIdOfUser()" class="ui icon message">
-          <i class="info circle icon"></i>
+        <div *ngIf="user?.vaccination_id" class="ui icon message">
+          <i class="calendar check icon color-green"></i>
           <div class="content">
             <h3>Sie haben bereits einen Termin.</h3>
-            <p>Sie haben sich schon für eine Impfung angemeldet und können sich daher nicht für einen weiteren Termin
+            <p>Sie haben bereits einen Impftermin gebucht und können sich daher nicht für einen weiteren Termin
               anmelden.
             </p>
           </div>
         </div>
 
         <div *ngIf="authService.isVaccined()" class="ui icon message">
-          <i class="info circle icon"></i>
+          <i class="check circle icon color-green"></i>
           <div class="content">
             <h3>Sie sind bereits geimpft.</h3>
             <p>Sie haben Ihre Impfung bereits erhalten und können sich daher nicht für einen weiteren Termin anmelden.

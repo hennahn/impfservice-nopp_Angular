@@ -9,6 +9,7 @@
   --backgrounddarker: #c3b997;
   --yellow: #eda745;
   --yellowdark: #e99520;
+  --green: #81a861;
   --nearlyblack: #1f2633;
   --nearlyblackdarker: #08090d;
 }
@@ -158,6 +159,7 @@ a:hover {
 
 .message {
   border-color: var(--backgrounddarker) !important;
+  padding: 30px !important;
 }
 
 /* ================ TABLE ================ */
@@ -191,9 +193,15 @@ select {
 
 /* ================ ICONS & BILDER ================ */
 
-.info,
-.question {
+.color-bgdark {
   color: var(--backgrounddarker);
+}
+.color-green {
+  color: var(--green);
+}
+
+.color-reddark {
+  color: var(--primarydark);
 }
 
 .img-pos {

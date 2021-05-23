@@ -114,17 +114,4 @@ export class AuthenticationService {
     }
     return null;
   }
-
-  //Problem: wird im token mitgespeichert, ändert sich also nur, wenn man sich neu einloggt --> ändern!
-  public checkVaccinationIdOfUser() {
-    if (localStorage.getItem('token')) {
-      let token = localStorage.getItem('token');
-      const decodedToken = jwt_decode(token) as Token;
-      if (decodedToken.user.vaccination_id != null) {
-        return true;
-      }
-      return false;
-    }
-    return false;
-  }
 }
