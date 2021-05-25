@@ -38,6 +38,10 @@ body {
   padding: 40px 0px !important;
 }
 
+.custom-margin-top {
+  margin-top: 60px;
+}
+
 /* ================ MENU ================ */
 
 .menu {
@@ -198,7 +202,7 @@ select {
   font-family: 'Karla', sans-serif !important;
 }
 
-/* ================ ICONS & BILDER ================ */
+/* ================ CUSTOM FARBEN & BILDER ================ */
 
 .color-bgdark {
   color: var(--backgrounddarker);
@@ -215,6 +219,12 @@ select {
   padding-top: 50px;
   max-width: 400px !important;
   margin: auto;
+}
+
+/* ================ SONSTIGES ================ */
+
+.divider {
+  border-top: 1px solid var(--backgrounddark) !important;
 }
 
 /* ================ FOOTER ================ */

@@ -21,7 +21,7 @@ export const VaccinationFormErrorMessages = [
   new ErrorMessage(
     'maxParticipants',
     'required',
-    'Bitte geben Sie eine maximale Anzahl an Teilnerhmer*innen an.'
+    'Bitte geben Sie eine maximale Anzahl an Teilnehmer*innen an.'
   ),
   new ErrorMessage(
     'maxParticipants',

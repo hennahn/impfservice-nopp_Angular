@@ -86,9 +86,6 @@ export class VaccinationFormComponent implements OnInit {
   }
 
   submitForm() {
-    /*this.vaccination = VaccinationFactory.fromObject(
-      this.vaccinationForm.value
-    );*/
     const val = this.vaccinationForm.value;
 
     //werte direkt auslesen, die ich für das reactive form gesetzt habe

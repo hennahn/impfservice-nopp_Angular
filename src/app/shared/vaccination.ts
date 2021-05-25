@@ -8,6 +8,6 @@ export class Vaccination {
     public to: Date,
     public maxParticipants: number,
     public location: Location,
-    public location_id: number //im nachhinein hinzugefügt, bei problemen hannes fragen
+    public location_id: number
   ) {}
 }

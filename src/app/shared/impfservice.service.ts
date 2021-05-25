@@ -60,9 +60,4 @@ export class ImpfserviceService {
   private errorHandler(error: Error | any) {
     return throwError(error);
   }
-
-  /*check(isbn: string): Observable<Boolean> {
-return this.http.get<Boolean>(`${this.api}/books/checkisbn/${isbn}`)
-.pipe(catchError(this.errorHandler));
-}*/
 }

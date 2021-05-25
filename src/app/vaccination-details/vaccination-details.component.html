@@ -40,7 +40,8 @@
         </a>
         <button *ngIf="authService.isLoggedIn() && authService.isAdmin()" class="ui icon button remove-btn" (click)="removeVaccination()"> <i class="remove icon"></i> Termin löschen</button>
 
-        <h2 *ngIf="authService.isLoggedIn()">Zur Impfung anmelden</h2>
+        <div class="ui divider"></div>
+        <h2 *ngIf="authService.isLoggedIn()" class="custom-margin-top">Zur Impfung anmelden</h2>
 
         <button *ngIf="authService.isLoggedIn() && !authService.isVaccined() && !user?.vaccination_id" class="ui icon button primary-btn" (click)="bookVaccination()">
           <i class="calendar check icon"></i> Jetzt anmelden
@@ -53,7 +54,10 @@
             <p>Sie haben bereits einen Impftermin gebucht und können sich daher nicht für einen weiteren Termin
               anmelden.
             </p>
-            <h4>Ihr Termin:</h4>
+            <h4 class="color-green">Ihr Termin:</h4>
+            <p class="color-green">{{user?.vaccination?.from | date:'dd.MM.yyyy'}}, {{vaccination?.from |
+              date:'HH:mm'}}-{{vaccination?.to |
+              date:'HH:mm'}}, {{user?.vaccination?.location?.name}}</p>
           </div>
         </div>
 

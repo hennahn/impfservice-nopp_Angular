@@ -30,8 +30,8 @@ export class VaccinationDetailsComponent implements OnInit {
       .subscribe(res => (this.vaccination = res));
     this.us.getSingleUser(this.authService.getUserId()).subscribe(user => {
       this.user = user;
+      console.log(this.user);
     });
-    //console.log(typeof this.user?.vaccination);
   }
 
   removeVaccination() {
