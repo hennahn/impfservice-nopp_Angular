@@ -14,6 +14,7 @@ import { ImpfserviceService } from '../shared/impfservice.service';
 import { Location } from '../shared/location';
 import { LocationService } from '../shared/location.service';
 import { DatePipe } from '@angular/common';
+import { VaccinationValidators } from '../shared/vaccination-validators';
 
 @Component({
   selector: 'is-vaccination-form',
@@ -25,12 +26,6 @@ export class VaccinationFormComponent implements OnInit {
   errors: { [key: string]: string } = {};
   isUpdatingVaccination = false; //einen bestehenden Termin updaten ja/nein
   locations: Location[];
-  /* ALT
-  location = [
-    { id: 1, location: 'Sportpark Walding' },
-    { id: 2, location: 'Design Center Linz' },
-    { id: 3, location: 'Ausbildungszentrum Kepler Universitätsklinikum' }
-  ];*/
 
   constructor(
     private fb: FormBuilder,
@@ -63,7 +58,7 @@ export class VaccinationFormComponent implements OnInit {
     //Formular Model bauen
     this.vaccinationForm = this.fb.group({
       //id: this.vaccination.id,
-      from: [this.datePipe.transform(this.vaccination?.from, "yyyy-MM-dd HH:mm:ss"), [Validators.required]],
+      from: [this.datePipe.transform(this.vaccination?.from, "yyyy-MM-dd HH:mm:ss"), [Validators.required, VaccinationValidators.checkDate]],
       to: [this.datePipe.transform(this.vaccination?.to, "yyyy-MM-dd HH:mm:ss"), [Validators.required]],
       maxParticipants: [this.vaccination.maxParticipants, [Validators.required, , Validators.min(1)]],
       location: [this.vaccination.location_id, [Validators.required]]

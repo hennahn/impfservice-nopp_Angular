@@ -31,6 +31,7 @@ export class VaccinationDetailsComponent implements OnInit {
     this.us.getSingleUser(this.authService.getUserId()).subscribe(user => {
       this.user = user;
     });
+    //console.log(typeof this.user?.vaccination);
   }
 
   removeVaccination() {

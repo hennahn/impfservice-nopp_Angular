@@ -7,7 +7,17 @@ export class ErrorMessage {
 }
 export const VaccinationFormErrorMessages = [
   new ErrorMessage('from', 'required', 'Bitte geben Sie ein Startdatum an.'),
+  new ErrorMessage(
+    'from',
+    'checkDate',
+    'Das Startdatum muss vor dem Enddatum liegen.'
+  ),
   new ErrorMessage('to', 'required', 'Bitte geben Sie ein Enddatum an.'),
+  new ErrorMessage(
+    'from',
+    'checkDate',
+    'Das Enddatum muss nach dem Startdatum liegen.'
+  ),
   new ErrorMessage(
     'maxParticipants',
     'required',

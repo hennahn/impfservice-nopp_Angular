@@ -17,6 +17,7 @@ export class User {
     public street?: string,
     public zipCode?: string,
     public houseNo?: string,
-    public city?: string
+    public city?: string,
+    public vaccination?: Vaccination
   ) {}
 }

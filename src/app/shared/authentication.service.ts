@@ -42,10 +42,6 @@ export class AuthenticationService {
     localStorage.setItem('userId', decodedToken.user.id);
     localStorage.setItem('isAdmin', decodedToken.user.isAdmin.toString());
     localStorage.setItem('status', decodedToken.user.status.toString());
-    localStorage.setItem(
-      'vaccination_id',
-      decodedToken.user.vaccination_id.toString()
-    );
   }
 
   public logout() {
@@ -54,7 +50,6 @@ export class AuthenticationService {
     localStorage.removeItem('userId');
     localStorage.removeItem('isAdmin');
     localStorage.removeItem('status');
-    localStorage.removeItem('vaccination_id');
   }
 
   public isLoggedIn() {

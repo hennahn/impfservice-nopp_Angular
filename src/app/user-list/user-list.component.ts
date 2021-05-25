@@ -14,6 +14,4 @@ export class UserListComponent implements OnInit {
   ngOnInit() {
     this.us.getAllUsers().subscribe(res => (this.users = res));
   }
-
-  //TODO: Muss ich hier den Login auch berücksichtigen?
 }
